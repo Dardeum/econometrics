@@ -262,12 +262,16 @@ Eligibility for the HISP is determined by income. Households that have an income
 
 **10.** Why choosing the bandwidth is important in regression discontinuity? What are the pros and cons of choosing a small/large bandwidth
 
-RD is about comparing two groups that are very similar except for the treatment because the treatment depends discontinuously on the cutoff. Therefore the bandwidth must have some proximity to the cutoff (local strategy), so that the differences observed at each group are attributable to the treatment and not to a difference in the characteristics of the treated groups. For instance, we can assume there is little to no difference of characteristics between households who have a `poverty_index` of 58 and households who have a `poverty_index` of 57. Yet the latter are not eligible for the HISP program.
-There is a tradeoff to find between choosing a smaller bandwidth which allows to reduce bias (less data) but eventually omitting valuable cases, and a larger bandwidth will allows the increase precision (there is more data) but will eventually take outliers: the results could be explained not only by the RD but by the characteristics of the households. Literature gives insight about optimal bandwidth choice (Imbens et al., 2009)
+RD is about comparing two groups that are very similar except for the treatment because the treatment depends discontinuously on the cutoff (`poverty_index` here) (Green et al., 2009). Therefore the bandwidth must have some proximity to the cutoff (local strategy), so that the differences observed at each group are attributable to the treatment and not to a difference in the characteristics of the treated groups. For instance, we can assume there is little to no difference of characteristics between households who have a `poverty_index` of 58 and households who have a `poverty_index` of 57. Yet the latter are not eligible for the HISP program.
+A smaller bandwidth facilitate local linear regression but it may generate estimates that are too uncertain to be useful.
+There is a tradeoff to find between choosing a smaller bandwidth which allows to reduce bias (less data) but eventually omits valuable cases, and a larger bandwidth which allows the increase precision (there is more data) but will eventually take outliers: the results could be explained not only by the RD but by the characteristics of the households.
+
+Literature gives insights about the optimal bandwidth choice (Imbens et al., 2009)
 \
 
 **11.** Suppose that you are including all households with poverty_index in between 53 and 63 (bandwidth=5). Before running an equation, what would you check to make sure that the regression discontinuity method is valid in this case, and why?
-
+We could start by choosing a wider bandwidth=10 for instance and check for the distribution of predetermined characteristics of households: they should be identical on either side of the cutoff, the smaller the bandwidth we chose.
+We should check if the bandwidth=5 is the bandwidth that minimizes the mean square error between actual and estimated treatment effects.
 \
 
 ## **Part 2: Data Science**
