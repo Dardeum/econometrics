@@ -225,10 +225,10 @@ However, we can notice that being enrolled in the HISP program has a significant
 \
 **7.** Run a regression model that estimates the difference-in-difference effect of being enrolled in the HISP program. Report the regression results in a table. What is the causal effect of HISP on health expenditures?
 ```{r}
-modeldif <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy*round_dummy, data = HISP_treatment)
+modeldif <- lm(health_expenditures ~ round_dummy + enrolled_dummy + round_dummy*enrolled_dummy, data = HISP_treatment)
 stargazer(modeldif, type = "text")
 ```
-The difference-in-difference estimate is -8.1629 (enrolled_dummy:round_dummy’ row). It means that the HISP had a negative impact on health expenditure
+The difference-in-difference estimate is `-8.1629` (enrolled_dummy:round_dummy’ row). It means that the enrolling in the HISP has a negative impact on health expenditure: the health expenditures decreased by `8,163%`
 \
 
 **8.** Run a second model that estimates the difference-in-difference effect, but control for the following variables: `age_hh`, `age_sp`, `educ_hh`, `educ_sp`, `female_hh`, `indigenous`, `hhsize`,`dirtfloor`, `bathroom`, `land`,`hospital_distance`, `park`, `sports`. Report the regression results in a table. How does the causal effect change?
@@ -237,12 +237,20 @@ The difference-in-difference estimate is -8.1629 (enrolled_dummy:round_dummy’ 
 modeldif2 <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + land + hospital_distance + park + sports, data = HISP_treatment)
 summary(modeldif2)
 ```
+By controlling for other variables, we see no notable change in `health_expenditures` - it is still about -8.16x - nor in the other variables.
 \
 
 ### **Summary**
 
 \
 **9.** Summarize the results from the three methods (OLS, IV and Diff-in-Diff) in the following table, and discuss the advantages and disadvantages of one method of your choice.
+```{r}
+Method = c('OLS', 'OLS', 'IV', 'Diff-in-Diff', 'Diff-in-Diff')
+Including_control_variables = c("No","Yes","Yes","No","Yes")
+Estimate = c(model1$coefficients[2],model2$coefficients[2],"0",modeldif$coefficients[4],modeldif2$coefficients[17])
+
+cbind.data.frame(Method,Including_control_variables,Estimate)
+```
 
 | Method       | Including control variables | Estimate |
 |:-------------|:----------------------------|:---------|
