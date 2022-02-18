@@ -220,13 +220,13 @@ HISP_treatment %>%
   group_by(round,enrolled) %>%
   summarise(mean(health_expenditures), mean(age_hh), mean(age_sp), mean(educ_hh), mean(educ_sp), mean(female_hh), mean(indigenous), mean(hhsize), mean(dirtfloor), mean(bathroom), mean(land), mean(land), mean(hospital_distance), mean(park), mean(sports))
 ```
-
-
+There appears to be little changes in the variables except for the `health_expenditures` variable and `age`. Concerning `age`, people not enrolled in the HISP program are older, which could be explained by the fact that, the older households are the more money they usually have, until retirement. (https://www.federalreserve.gov/publications/files/scf20.pdf, page 7).
+However, we can notice that being enrolled in the HISP program has a significant impact on health expenditures, and even more after intervention. Indeed, people not enrolled in the HISP program after intervention have about three times the health expenditures of not enrolled households (`22.304911` vs `7.840179`)
 \
 **7.** Run a regression model that estimates the difference-in-difference effect of being enrolled in the HISP program. Report the regression results in a table. What is the causal effect of HISP on health expenditures?
 ```{r}
 modeldif <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy*round_dummy, data = HISP_treatment)
-summary(modeldif)
+stargazer(modeldif, type = "text")
 ```
 The difference-in-difference estimate is -8.1629 (enrolled_dummy:round_dummy’ row). It means that the HISP had a negative impact on health expenditure
 \
