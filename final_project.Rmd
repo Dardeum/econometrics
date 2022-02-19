@@ -1,346 +1,1168 @@
+Show in New Window
+
+===============================================
+                        Dependent variable:    
+                    ---------------------------
+                        health_expenditures    
+-----------------------------------------------
+enrolled_rp                 -12.708***         
+                              (0.229)          
+                                               
+Constant                     20.587***         
+                              (0.124)          
+                                               
+-----------------------------------------------
+Observations                   9,914           
+R2                             0.237           
+Adjusted R2                    0.237           
+Residual Std. Error     10.388 (df = 9912)     
+F Statistic         3,075.623*** (df = 1; 9912)
+===============================================
+Note:               *p<0.1; **p<0.05; ***p<0.01
+Show in New Window
+
+===============================================
+                        Dependent variable:    
+                    ---------------------------
+                        health_expenditures    
+-----------------------------------------------
+enrolled_rp                  -9.815***         
+                              (0.213)          
+                                               
+age_hh                       0.074***          
+                              (0.011)          
+                                               
+age_sp                        -0.013           
+                              (0.013)          
+                                               
+educ_hh                        0.040           
+                              (0.042)          
+                                               
+educ_sp                       -0.046           
+                              (0.045)          
+                                               
+female_hh                    1.031***          
+                              (0.336)          
+                                               
+indigenous                   -2.339***         
+                              (0.213)          
+                                               
+hhsize                       -2.038***         
+                              (0.044)          
+                                               
+dirtfloor                    -2.084***         
+                              (0.203)          
+                                               
+bathroom                     0.687***          
+                              (0.195)          
+                                               
+land                         0.095***          
+                              (0.030)          
+                                               
+hospital_distance             -0.004*          
+                              (0.002)          
+                                               
+park                           0.042           
+                              (0.064)          
+                                               
+sports                        -0.006           
+                              (0.032)          
+                                               
+Constant                     29.112***         
+                              (0.665)          
+                                               
+-----------------------------------------------
+Observations                   9,914           
+R2                             0.406           
+Adjusted R2                    0.405           
+Residual Std. Error      9.173 (df = 9899)     
+F Statistic         482.659*** (df = 14; 9899) 
+===============================================
+Note:               *p<0.1; **p<0.05; ***p<0.01
+Show in New Window
+Description:df [1 x 1]
+treatment_locality
+<chr>
+Treatment				
+1 row
+data.frame
+1 x 1
+Description:df [2 x 1]
+round
+<chr>
+Before				
+After				
+2 rows
+data.frame
+2 x 1
+Description:df [1 x 1]
+treatment_locality
+<chr>
+Treatment				
+1 row
+Show in New Window
+
+======================================================
+                               Dependent variable:    
+                           ---------------------------
+                               health_expenditures    
+------------------------------------------------------
+round_dummy                         1.513***          
+                                     (0.251)          
+                                                      
+enrolled_dummy                      -6.302***         
+                                     (0.229)          
+                                                      
+round_dummy:enrolled_dummy          -8.163***         
+                                     (0.324)          
+                                                      
+Constant                            20.791***         
+                                     (0.177)          
+                                                      
+------------------------------------------------------
+Observations                          9,919           
+R2                                    0.344           
+Adjusted R2                           0.343           
+Residual Std. Error             7.913 (df = 9915)     
+F Statistic                1,730.145*** (df = 3; 9915)
+======================================================
+Note:                      *p<0.1; **p<0.05; ***p<0.01
+Show in New Window
+
+Call:
+lm(formula = health_expenditures ~ enrolled_dummy + round_dummy + 
+    enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + 
+    educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + 
+    land + hospital_distance + park + sports, data = HISP_treatment)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.887  -1.851  -0.265   0.914  80.581 
+
+Coefficients:
+                            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                27.379043   0.496421  55.153  < 2e-16 ***
+enrolled_dummy             -1.512755   0.208989  -7.238 4.88e-13 ***
+round_dummy                 1.450705   0.207301   6.998 2.76e-12 ***
+age_hh                      0.080491   0.008191   9.827  < 2e-16 ***
+age_sp                     -0.019726   0.009279  -2.126 0.033533 *  
+educ_hh                     0.060032   0.029811   2.014 0.044063 *  
+educ_sp                    -0.076499   0.032416  -2.360 0.018299 *  
+female_hh                   1.103694   0.241104   4.578 4.76e-06 ***
+indigenous                 -2.312066   0.147543 -15.670  < 2e-16 ***
+hhsize                     -1.994700   0.033031 -60.388  < 2e-16 ***
+dirtfloor                  -2.299754   0.145472 -15.809  < 2e-16 ***
+bathroom                    0.499839   0.138913   3.598 0.000322 ***
+land                        0.090874   0.021580   4.211 2.56e-05 ***
+hospital_distance          -0.003190   0.001675  -1.905 0.056858 .  
+park                        0.002208   0.045377   0.049 0.961198    
+sports                      0.001727   0.022963   0.075 0.940039    
+enrolled_dummy:round_dummy -8.161552   0.268012 -30.452  < 2e-16 ***
 ---
-title: "Olivier Caron"
-output: html_notebook
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 6.544 on 9902 degrees of freedom
+Multiple R-squared:  0.5516,	Adjusted R-squared:  0.5509 
+F-statistic: 761.3 on 16 and 9902 DF,  p-value: < 2.2e-16
+
+Show in New Window
+Description:df [5 x 3]
+Method
+<chr>
+Including_control_variables
+<chr>
+Estimate
+<chr>
+OLS	No	-12.7084490531256		
+OLS	Yes	-9.81526148604625		
+IV	Yes	0		
+Diff-in-Diff	No	-8.16293128733921		
+Diff-in-Diff	Yes	-8.16155237473173		
+5 rows
+Show in New Window
+`summarise()` has grouped output by 'round'. You can override using the `.groups` argument.
+R Console
+A tibble:4 x 16
+Groups:round [2]
+round
+<chr>
+enrolled
+<chr>
+mean(health_expenditures)
+<dbl>
+mean(age_hh)
+<dbl>
+After	Enrolled	7.840179	42.62702	
+After	Not enrolled	22.304911	52.99449	
+Before	Enrolled	14.489694	41.65658	
+Before	Not enrolled	20.791494	52.02607	
+4 rows | 1-4 of 16 columns
+grouped_df
+4 x 16
+A tibble:4 x 16
+Groups:round [2]
+round
+<chr>
+enrolled
+<chr>
+mean(health_expenditures)
+<dbl>
+mean(age_hh)
+<dbl>
+mean(age_sp)
+<dbl>
+mean(educ_hh)
+<dbl>
+mean(educ_sp)
+<dbl>
+mean(female_hh)
+<dbl>
+mean(indigenous)
+<dbl>
+mean(hhsize)
+<dbl>
+After	Enrolled	7.840179	42.62702	37.63845	2.971190	2.706745	0.07318718	0.4293423	5.770320	
+After	Not enrolled	22.304911	52.99449	45.27569	2.705383	2.491980	0.13233083	0.2701754	4.301754	
+Before	Enrolled	14.489694	41.65658	36.83637	2.971180	2.703273	0.07321188	0.4291498	5.769906	
+Before	Not enrolled	20.791494	52.02607	44.51830	2.705383	2.490476	0.13233083	0.2701754	4.301754	
+4 rows | 1-10 of 16 columns
+Show in New Window
+
+Show in New Window
+
+Show in New Window
+
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+>     library(tidyverse)   # ggplot(), %>%, mutate(), and friends
+Registered S3 methods overwritten by 'dbplyr':
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+-- Attaching packages ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- tidyverse 1.3.1 --
+v ggplot2 3.3.5     v purrr   0.3.4
+v tibble  3.1.6     v dplyr   1.0.7
+v tidyr   1.1.4     v stringr 1.4.0
+v readr   2.1.1     v forcats 0.5.1
+-- Conflicts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+>     library(scales)      # Format numbers with functions like comma(), percent(), and dollar()
+
+Attachement du package : ‘scales’
+
+L'objet suivant est masqué depuis ‘package:purrr’:
+
+    discard
+
+L'objet suivant est masqué depuis ‘package:readr’:
+
+    col_factor
+
+>     library(broom)       # Convert models to data frames
+>     library(stargazer)   # Makes nice tables
+
+Please cite as: 
+
+ Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+ R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
+
+>     library(lmtest)      # To test linear regression models
+Le chargement a nécessité le package : zoo
+
+Attachement du package : ‘zoo’
+
+Les objets suivants sont masqués depuis ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+>     library(AER)         # Applied econometrics in R
+Le chargement a nécessité le package : car
+Le chargement a nécessité le package : carData
+
+Attachement du package : ‘car’
+
+L'objet suivant est masqué depuis ‘package:dplyr’:
+
+    recode
+
+L'objet suivant est masqué depuis ‘package:purrr’:
+
+    some
+
+Le chargement a nécessité le package : sandwich
+Le chargement a nécessité le package : survival
+>     library(rdrobust)    # For robust nonparametric regression discontinuity
+>     library(rddensity)   # For nonparametric regression discontinuity density tests
+>     library(dplyr)
+>     library(data.table)
+Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+data.table 1.14.2 using 6 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+Attachement du package : ‘data.table’
+
+Les objets suivants sont masqués depuis ‘package:dplyr’:
+
+    between, first, last
+
+L'objet suivant est masqué depuis ‘package:purrr’:
+
+    transpose
+
+>     # Make all figures use specific dimensions by default
+>     knitr::opts_chunk$set(fig.align = "center", retina = 2,
++                           fig.width = 7, fig.height = 4.2)
+> 
+> HISP_after <- read.csv("HISP.csv") %>% filter(round == "After")
+> model1 <- lm(health_expenditures ~ enrolled_rp, data = HISP_after) #linear model m1
+> stargazer(model1, type = "text") #to check what my model1 gives
+
+===============================================
+                        Dependent variable:    
+                    ---------------------------
+                        health_expenditures    
+-----------------------------------------------
+enrolled_rp                 -12.708***         
+                              (0.229)          
+                                               
+Constant                     20.587***         
+                              (0.124)          
+                                               
+-----------------------------------------------
+Observations                   9,914           
+R2                             0.237           
+Adjusted R2                    0.237           
+Residual Std. Error     10.388 (df = 9912)     
+F Statistic         3,075.623*** (df = 1; 9912)
+===============================================
+Note:               *p<0.1; **p<0.05; ***p<0.01
+> model2 <- lm(health_expenditures ~ enrolled_rp + age_hh + age_sp + educ_hh + educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + land + hospital_distance + park + sports, data = HISP_after)
+> stargazer(model2, type = "text") 
+
+===============================================
+                        Dependent variable:    
+                    ---------------------------
+                        health_expenditures    
+-----------------------------------------------
+enrolled_rp                  -9.815***         
+                              (0.213)          
+                                               
+age_hh                       0.074***          
+                              (0.011)          
+                                               
+age_sp                        -0.013           
+                              (0.013)          
+                                               
+educ_hh                        0.040           
+                              (0.042)          
+                                               
+educ_sp                       -0.046           
+                              (0.045)          
+                                               
+female_hh                    1.031***          
+                              (0.336)          
+                                               
+indigenous                   -2.339***         
+                              (0.213)          
+                                               
+hhsize                       -2.038***         
+                              (0.044)          
+                                               
+dirtfloor                    -2.084***         
+                              (0.203)          
+                                               
+bathroom                     0.687***          
+                              (0.195)          
+                                               
+land                         0.095***          
+                              (0.030)          
+                                               
+hospital_distance             -0.004*          
+                              (0.002)          
+                                               
+park                           0.042           
+                              (0.064)          
+                                               
+sports                        -0.006           
+                              (0.032)          
+                                               
+Constant                     29.112***         
+                              (0.665)          
+                                               
+-----------------------------------------------
+Observations                   9,914           
+R2                             0.406           
+Adjusted R2                    0.405           
+Residual Std. Error      9.173 (df = 9899)     
+F Statistic         482.659*** (df = 14; 9899) 
+===============================================
+Note:               *p<0.1; **p<0.05; ***p<0.01
+> HISP_treatment <- read.csv("HISP.csv") %>% filter(treatment_locality == "Treatment")
+> distinct(HISP_treatment,treatment_locality) #just to check
+> distinct(HISP_treatment,round)
+> HISP_treatment <- HISP_treatment %>%
++   mutate(enrolled_dummy = ifelse(enrolled == "Enrolled", 1, 0), round_dummy = ifelse(round == "After", 1, 0))
+> #if enrolled, enrolled_dummy = 1; if round=after, round_dummy=1
+> HISP_treatment %>% 
++   group_by(round,enrolled) %>%
++   summarise(mean(health_expenditures), mean(age_hh), mean(age_sp), mean(educ_hh), mean(educ_sp), mean(female_hh), mean(indigenous), mean(hhsize), mean(dirtfloor), mean(bathroom), mean(land), mean(land), mean(hospital_distance), mean(park), mean(sports))
+`summarise()` has grouped output by 'round'. You can override using the `.groups` argument.
+> HISP_treatment <- HISP_treatment %>%
++   mutate(enrolled_dummy = ifelse(enrolled == "Enrolled", 1, 0), round_dummy = ifelse(round == "After", 1, 0))
+> #if enrolled, enrolled_dummy = 1; if round=after, round_dummy=1
+> HISP_treatment %>% 
++   group_by(round,enrolled) %>%
++   summarise(mean(health_expenditures), mean(age_hh), mean(age_sp), mean(educ_hh), mean(educ_sp), mean(female_hh), mean(indigenous), mean(hhsize), mean(dirtfloor), mean(bathroom), mean(land), mean(land), mean(hospital_distance), mean(park), mean(sports))
+`summarise()` has grouped output by 'round'. You can override using the `.groups` argument.
+> modeldif <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy*round_dummy, data = HISP_treatment)
+> summary(modeldif)
+
+Call:
+lm(formula = health_expenditures ~ enrolled_dummy + round_dummy + 
+    enrolled_dummy * round_dummy, data = HISP_treatment)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-14.057  -4.910  -0.942   3.221  91.730 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                 20.7915     0.1772 117.362  < 2e-16 ***
+enrolled_dummy              -6.3018     0.2291 -27.501  < 2e-16 ***
+round_dummy                  1.5134     0.2505   6.041 1.59e-09 ***
+enrolled_dummy:round_dummy  -8.1629     0.3241 -25.190  < 2e-16 ***
 ---
-
-**Final Project**
-
-#### **Maria Teresa Aguilar Rojas, Mustapha Sali, and Dianzhuo Zhu**
-
-\
-
-The final project consists two parts: econometrics (14 points) and data science (6 points). You are invited to follow the instructions of each part to solve the questions. Note that it is an individual project, and you are expected to submit three documents, all named [first name + last name + final project]
-
-The three documents are:
-
--   A solution sheet for econometrics, to [maria-teresa.aguilar-rojas\@dauphine.psl.eu](mailto:maria-teresa.aguilar-rojas@dauphine.psl.eu) and [dianzhuo.zhu\@dauphine.psl.eu](mailto:dianzhuo.zhu@dauphine.psl.eu)
-
--   An R code document for econometrics, to [maria-teresa.aguilar-rojas\@dauphine.psl.eu](mailto:maria-teresa.aguilar-rojas@dauphine.psl.eu) and [dianzhuo.zhu\@dauphine.psl.eu](mailto:dianzhuo.zhu@dauphine.psl.eu) (If you are using Markdown or Jupyter notebooks, the htlm document showing solutions+code is enough).
-
--   A Jupyter notebook with python code, comments and answers, to [mustapha.sali\@dauphine.psl.eu](mailto:mustapha.sali@dauphine.psl.eu)
-
-The deadline is **February 20, 2022**. We choose to give you enough time to finish the project. In consequence, delayed submissions will be heavily punished in final notes, although they will be graded. We use the same database for all the exercises (`HISP.csv`), but you may only need to use a subset of the entire database for some of the questions. We will explain you the variables and give you clear instructions on which subset to be used.
-
-\
-
-## **Description of the data**
-
-\
-
-The World Bank's *Impact Evaluation in Practice* used a hypothetical example of a health insurance program. This Health Insurance Subsidy Program (HISP) provides subsidies for buying private health insurance to poorer households, with the goal of lowering personal health expenditures, since people can rely on insurance coverage instead of paying out-of-pocket. Think of the HISP as a version of the Affordable Care Act (ACA, commonly known as Obamacare).
-
-\
-
-The dataset includes a number of important variables you'll use throughout this assignment:
-
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| Variable name         | Description                                                                                      |
-+:======================+:=================================================================================================+
-| `health_expenditures` | Out of pocket health expenditures (per person per year)                                          |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `eligible`            | Household eligible to enroll in HISP                                                             |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `enrolled`            | Household enrolled in HISP                                                                       |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `round`               | Indicator for before and after intervention                                                      |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `treatment_locality`  | Household is located in treatment community                                                      |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `poverty_index`       | 1-100 scale of poverty                                                                           |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `promotion_locality`  | Household is located in community that received random promotion/encouragement to enroll in HISP |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `enrolled_rp`         | Household enrolled in HISP following random promotion                                            |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-
-\
-
-It also includes several socio-demographic variables about the households. **Each of these are confounders between health expenditures and participation in the HISP**:
-
-+---------------------+-------------------------------------------------------------------------+
-| Variable name       | Description                                                             |
-+:====================+:========================================================================+
-| `age_hh`            | Age of the head of household (years)                                    |
-+---------------------+-------------------------------------------------------------------------+
-| `age_sp`            | Age of the spouse (years)                                               |
-+---------------------+-------------------------------------------------------------------------+
-| `educ_hh`           | Education of the head of household (years)                              |
-+---------------------+-------------------------------------------------------------------------+
-| `educ_sp`           | Education of the spouse (years)                                         |
-+---------------------+-------------------------------------------------------------------------+
-| `female_hh`         | Head of household is a woman (1 = yes)                                  |
-+---------------------+-------------------------------------------------------------------------+
-| `indigenous`        | Head of household speaks an indigenous language (1 = yes)               |
-+---------------------+-------------------------------------------------------------------------+
-| `hhsize`            | Number of household members                                             |
-+---------------------+-------------------------------------------------------------------------+
-| `dirtfloor`         | Home has a dirt floor (1 = yes)                                         |
-+---------------------+-------------------------------------------------------------------------+
-| `bathroom`          | Home has a private bathroom (1 = yes)                                   |
-+---------------------+-------------------------------------------------------------------------+
-| `land`              | Number of hectares of land owned by household                           |
-+---------------------+-------------------------------------------------------------------------+
-| `hospital_distance` | Distance to closest hospital (km)                                       |
-+---------------------+-------------------------------------------------------------------------+
-| `park`              | Distance to closest park (km)                                           |
-+---------------------+-------------------------------------------------------------------------+
-| `sports`            | Number of hours per week that the head of the household practices sport |
-+---------------------+-------------------------------------------------------------------------+
-
-\
-
-To help you understand these variables, think of the following story:
-
-Each household has a `poverty_index` number from 1 (the poorest) to 100 (the wealthiest) which indicates the level of poverty. In this example, all households with a `poverty_index` smaller than 58 are eligible for the HISP program. Among the eligible households, they can freely decide whether or not they want to enroll.
-
-To encourage more households to enroll, the program launches a promotion campaign in some randomly selected areas (note that the campaign is based on geography while the eligibility is based on index, which means that both eligible and non-eligible households may receive the promotion information). We document enrollment after receiving a random promotion (variable `enrolled_rp`)
-
-After the promotion campaign, the program is finally launched, but only in randomly selected localities (`treatment_locality == "Treatment"`), which means that not all eligible (and willing to participate) households are able to enroll in the program. We document enrollment to the program (variable `enrolled`), the health expenditures, and other socio-demographic variables of each household before and after the launch of the program. Note that `enrolled` and `enrolled_rp` are not the same variable; `enrolled` shows whether a person participates to the program, whereas `enrolled_rp` shows whether a person participates to the program after having received a promotion.
-
-\
-*Remark:* This is an artificial dataset that is designed for econometric analysis, so the descriptive stats may seem too "perfect" compared to real cases. Also, if you are confused about which subset of data to include in a regression, don't worry, we will give you indications on the variables to be used for each method. Since several variables are artificially designed, the purpose is not to have an in-depth understanding of the variables of the database, but to be able to use several methods and to explain the results.
-
-\
-
-## **Part 1: Econometrics**
-
-Maximum possible points: 14
-
-\
-
-The libraries you will need for the project are the following:
-
-```{r include = FALSE}
-    library(tidyverse)   # ggplot(), %>%, mutate(), and friends
-    library(scales)      # Format numbers with functions like comma(), percent(), and dollar()
-    library(broom)       # Convert models to data frames
-    library(stargazer)   # Makes nice tables
-    library(lmtest)      # To test linear regression models
-    library(AER)         # Applied econometrics in R
-    library(rdrobust)    # For robust nonparametric regression discontinuity
-    library(rddensity)   # For nonparametric regression discontinuity density tests
-    library(dplyr)
-    library(data.table)
-    # Make all figures use specific dimensions by default
-    knitr::opts_chunk$set(fig.align = "center", retina = 2,
-                          fig.width = 7, fig.height = 4.2)
-
-```
-
-\
-
-You will use each of the four econometric approaches seen in class for estimating causal effects to measure the effect of HISP on household health expenditures. **Don't worry about conducting in-depth baseline checks and robustness checks.** The purpose is not to have an in-depth understanding of the variables of the database, but to be able to use several methods and to explain the results. Also remember that, when reporting the solutions, a numeric answer is not enough! We highly recommend to provide an **intuitive argument** to your answers.
-
-\
-
-## **OLS Regression**
-
-\
-**Preliminary step A:** Create a dataset based on `HISP` that only includes observations from after the intervention (`round == "After"`). Note that you will use this database for all the **OLS and IV** exercises.
-
-```{r include = FALSE}
-HISP_after <- read.csv("HISP.csv") %>% filter(round == "After")
-```
-
-\
-**1.** Build a regression model that estimates the effect of HISP enrollment on health expenditures. You'll need to use the `enrolled_rp` variable instead of `enrolled`, since we're measuring enrollment after the promotion campaign. Report the regression results in a table. What does this model tell us about the effect of enrolling in HISP?
-
-```{r}
-model1 <- lm(health_expenditures ~ enrolled_rp, data = HISP_after) #linear model m1
-stargazer(model1, type = "text") #to check what my model1 gives
-```
-
-There is a significant negative effect of enrollment on health expenditures. It means that when households are in HISP following random promotion, they spend less money on health expenditures.\
-
-**2.** Build the same regression model but now include the following control variables: `age_hh`, `age_sp`, `educ_hh`, `educ_sp`, `female_hh`, `indigenous`, `hhsize`,`dirtfloor`, `bathroom`, `land`, `hospital_distance`, `park`, and `sports`. Report the results in a table.
-
-```{r}
-model2 <- lm(health_expenditures ~ enrolled_rp + age_hh + age_sp + educ_hh + educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + land + hospital_distance + park + sports, data = HISP_after)
-stargazer(model2, type = "text") 
-```
-
-1.  Compared to the model in question **1**, is the coefficient of enrollment underestimated or overestimated in Q1?\
-    When controlling for other variables, enrolled_rp is lower in the second model (`-9.815` vs `-12.708`) so it is overestimated in Q1.
-
-2.  Interpret the coefficient of `age_hh`
-    It means that if the "head of the household" is one year older, the out of pocket health expenditures per person per year increases by `0.074` dollars.
-
-3.  What is the estimated effect in health expenditures for a household with a private bathroom, holding all other variables constant?
-    Holding all over variables constant, the household' health_expenditures increases by `0.687` dollars.
-\
-
-## **Instrumental Variables Regression**
-
-*Remark*: For the IV exercises, we will use the database created in **Preliminary Step A**, that only includes observations from after the intervention (`round == "After"`).
-
-\
-
-Consider the following model:
-
-\
-health_expenditures $=\beta_{0}+\beta_{1}$ enrolled_rp $+\beta_{2}$ age_hh $+\beta_{3}$ age_sp $+\beta_{4}$ educ_hh $+\beta_{5}$ educ_sp $+\beta_{6}$ female_hh $+$ $\beta_{7}$ indigenous $+\beta_{8}$ hhsize $+\beta_{9}$ dirtfloor $+\beta_{10}$ bathroom $+\beta_{11}$ land $+\beta_{12}$ hospital_distance $+\beta_{13}$ park $+\beta_{14}$ sports
-\
-
-**3.** Is there a possible endogeneity in one of the variables of the model? If so, why?
-Yes, the variable sport could be endogeneous with health_expenditures. Depending on  
-\
-
-**4.** If there is endogeneity in one of the variables, find a possible instrument in the data and discuss if it is suitable to correct it.
-
-\
-**5.** Run a 2SLS regression model using the previous instrument. Report the regression results in a table. After removing the endogeneity issue, what is the causal effect of enrollment in the HISP?
-
-\
-
-## **Difference-in-Differences Regression**
-
-We can estimate the causal effect using a difference-in-difference approach. We have data indicating if households were enrolled in the program (`enrolled`) and data indicating if they were surveyed before or after the intervention (`round`), which means we can find the differences between enrolled/not enrolled before and after the program.
-
-*Remark* Since we do not have enough data before the program started, we assume that these two groups share parallel trends before the treatment. Hence, it is fine to perform a Diff-in-Diff estimation.
-
-\
-**Preliminary step B:** Make a new dataset based on `HISP` that only includes observations from the localities that were randomly chosen for treatment (`treatment_locality == "Treatment"`). *Remark*: Use this dataset for the **Diff-in-Diff and RDD** exercises.
-
-```{r}
-HISP_treatment <- read.csv("HISP.csv") %>% filter(treatment_locality == "Treatment")
-distinct(HISP_treatment,treatment_locality) #just to check
-distinct(HISP_treatment,round)
-```
-
-\
-**6.** Obtain the average of `health_expenditures`, `age_hh`, `age_sp`, `educ_hh`, `educ_sp`, `female_hh`, `indigenous`, `hhsize`,`dirtfloor`, `bathroom`, `land`,`hospital_distance`, `park`,`sports` for every time period in both the treatment and control groups (i.e.Â enrolled and not enrolled), and report them in a table. Analyze the differences in the variables for both treatment and control groups.
-```{r}
-HISP_treatment <- HISP_treatment %>%
-  mutate(enrolled_dummy = ifelse(enrolled == "Enrolled", 1, 0), round_dummy = ifelse(round == "After", 1, 0))
-#if enrolled, enrolled_dummy = 1; if round=after, round_dummy=1
-```
-
-```{r}
-HISP_treatment %>% 
-  group_by(round,enrolled) %>%
-  summarise(mean(health_expenditures), mean(age_hh), mean(age_sp), mean(educ_hh), mean(educ_sp), mean(female_hh), mean(indigenous), mean(hhsize), mean(dirtfloor), mean(bathroom), mean(land), mean(land), mean(hospital_distance), mean(park), mean(sports))
-```
-There appears to be little changes in the variables except for the `health_expenditures` variable and `age`. Concerning `age`, people not enrolled in the HISP program are older, which could be explained by the fact that, the older households are the more money they usually have, until retirement. (https://www.federalreserve.gov/publications/files/scf20.pdf, page 7).
-However, we can notice that being enrolled in the HISP program has a significant impact on health expenditures, and even more after intervention. Indeed, people not enrolled in the HISP program after intervention have about three times the health expenditures of not enrolled households (`22.304911` vs `7.840179`)
-\
-**7.** Run a regression model that estimates the difference-in-difference effect of being enrolled in the HISP program. Report the regression results in a table. What is the causal effect of HISP on health expenditures?
-```{r}
-modeldif <- lm(health_expenditures ~ round_dummy + enrolled_dummy + round_dummy*enrolled_dummy, data = HISP_treatment)
-stargazer(modeldif, type = "text")
-```
-The difference-in-difference estimate is `-8.1629` (enrolled_dummy:round_dummy’ row). It means that the enrolling in the HISP has a negative impact on health expenditure: the health expenditures decreased by `8,163%`
-\
-
-**8.** Run a second model that estimates the difference-in-difference effect, but control for the following variables: `age_hh`, `age_sp`, `educ_hh`, `educ_sp`, `female_hh`, `indigenous`, `hhsize`,`dirtfloor`, `bathroom`, `land`,`hospital_distance`, `park`, `sports`. Report the regression results in a table. How does the causal effect change?
-
-```{r}
-modeldif2 <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + land + hospital_distance + park + sports, data = HISP_treatment)
-summary(modeldif2)
-```
-By controlling for other variables, we see no notable change in `health_expenditures` - it is still about -`8.16x` - nor in the other variables.
-\
-
-### **Summary**
-
-\
-**9.** Summarize the results from the three methods (OLS, IV and Diff-in-Diff) in the following table, and discuss the advantages and disadvantages of one method of your choice.
-```{r}
-Method = c('OLS', 'OLS', 'IV', 'Diff-in-Diff', 'Diff-in-Diff')
-Including_control_variables = c("No","Yes","Yes","No","Yes")
-Estimate = c(model1$coefficients[2],model2$coefficients[2],"0",modeldif$coefficients[4],modeldif2$coefficients[17])
-
-cbind.data.frame(Method,Including_control_variables,Estimate)
-```
-The diff-in-diff method is useful because it enables to estimate the impact of the enrollment in the HISP program as if it was planned as an experiment (control and treatment groups), doing ex-post analysis on available data.
-\
-
-## **Regression Discontinuity Design**
-
-Eligibility for the HISP is determined by income. Households that have an income of less than 58 on a standardized 1-100 scale (`poverty_index`) qualify for the program and are automatically enrolled. Because we have an arbitrary cutoff in a running variable, we can use regression discontinuity to measure the effect of the program on health expenditures.
-
-\
-
-**10.** Why choosing the bandwidth is important in regression discontinuity? What are the pros and cons of choosing a small/large bandwidth
-
-RD is about comparing two groups that are very similar except for the treatment because the treatment depends discontinuously on the cutoff (`poverty_index` here) (Green et al., 2009). Therefore the bandwidth must have some proximity to the cutoff (local strategy), so that the differences observed at each group are attributable to the treatment and not to a difference in the characteristics of the treated groups. For instance, we can assume there is little to no difference of characteristics between households who have a `poverty_index` of 58 and households who have a `poverty_index` of 57 even if the latter are not eligible for the HISP program. The `health_expenditures` comparison on either side of 57 has high internal validity.
-A smaller bandwidth facilitate local linear regression but it may generate estimates that are too uncertain to be useful.
-There is a tradeoff to find between choosing a smaller bandwidth which allows to reduce bias (less data) but eventually omits valuable cases, and a larger bandwidth which allows the increase precision (there is more data) but will eventually take outliers: the results could be explained not only by the RD but by the characteristics of the households.
-
-Literature gives insights about the optimal bandwidth choice (Imbens et al., 2009)
-\
-
-**11.** Suppose that you are including all households with poverty_index in between 53 and 63 (bandwidth=5). Before running an equation, what would you check to make sure that the regression discontinuity method is valid in this case, and why?
-We could start by choosing a wider bandwidth=10 for instance, decreasing the bandwidth by iteration, and check for the distribution of predetermined characteristics of households by plotting them on a graph: they should be identical on either side of the cutoff, the smaller the bandwidth we chose. We should have a visual evidence of a "jump" at the cuttoff score (57) and test its statistical significance. We can also try to place placebo cutoffs and see if there is still a jump.
-The plotting can be done by using bins.
-We should check if the bandwidth=5 is the bandwidth that minimizes the mean square error between actual and estimated treatment effects because the bias-variance tradeoff is captured in it the MSE of the estimator. (see https://www.mattblackwell.org/files/teaching/s11-rdd-handout.pdf, slide 52)
-\
-
-## **Part 2: Data Science**
-
-Maximum possible points: 6
-
-Deliverable: Jupyter notebook with Python code, comments, and answers to the asked questions
-
-Restitution: By e-mail to [mustapha.sali\@dauphine.psl.eu](mailto:mustapha.sali@dauphine.psl.eu)
-
-The aim of this part of the project is to train a regressor that predicts health expenditures per household using a part of the HISP database.
-
-For consistency reasons, you will only use data describing the situation of households before the implementation of the HISP program (`round=Before`).
-
-In addition, only the variables below will be used to train your model:
-
--   `poverty_index`\
-
--   `age_hh`
-
--   `age_sp`
-
--   `educ_hh`
-
--   `educ_sp`
-
--   `female_hh`
-
--   `indigenous`
-
--   `hhsize`
-
--   `dirtfloor`
-
--   `bathroom`
-
--   `land`
-
--   `hospital_distance`
-
--   `park`
-
--   `sports`
-
-\
-
-**1.** Upload the `HISP` dataset and build-up a Pandas Dataframe containing the label (health_expenditures) and the up-mentioned features. Show and comment some descriptive statistics related to this Dataframe.
-
-**2.** Split the Dataframe into a training and test sets with a test_size of 20%.
-
-**3.** A first linear model:
-
-1.  Using the training set, train a simple linear model. What are the required transformations on the variables before training the model?
-
-2.  Write a function that computes the Root Mean Squared Error (RMSE) and implement it on the predictions issued from the training set. What is the phenomena that could explain this result? What do you suggest as a solution to verify the generalizability of your model without using the test set?
-
-3.  Print the coefficients (and their related variables) as well as the intercept of your model.
-
-4.  Analyse the importance of the variables. Which variable(s) could be set aside without significant impact on the quality of the predictor? Which regularization makes it possible to set the coefficients of the less important variables to zero?
-
-**4.** A second model of your choice:
-
-1.  Using the training set, train a new regressor of your choice (Decision tree, Random forest, SVM, ...) considering a Grid Search approach on some hyperparameters (at least two of them). What are the required transformations on the variables before training the model? Briefly explain the role of the hyperparameters you selected for the Grid Search.
-
-2.  On a bar chart, plot the training and validation scores of the models resulting from the Grid Search. Briefly comment the chart.
-
-3.  Print the values of the hyperparameters related to the best model (based on the validation score)
-
-4.  Analyse the importance of the variables. Which variable could be set aside without significant impact on the quality of the predictor?
-
-**5.** Using the first 100 observations of the test set, plot the real values as well as the predicted values of both models. Compare the performance of both models using the whole test set. What is your conclusion?
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 7.913 on 9915 degrees of freedom
+Multiple R-squared:  0.3436,	Adjusted R-squared:  0.3434 
+F-statistic:  1730 on 3 and 9915 DF,  p-value: < 2.2e-16
+
+> modeldif2 <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + land + hospital_distance + park + sports, data = HISP_treatment)
+> summary(modeldif2)
+
+Call:
+lm(formula = health_expenditures ~ enrolled_dummy + round_dummy + 
+    enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + 
+    educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + 
+    land + hospital_distance + park + sports, data = HISP_treatment)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.887  -1.851  -0.265   0.914  80.581 
+
+Coefficients:
+                            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                27.379043   0.496421  55.153  < 2e-16 ***
+enrolled_dummy             -1.512755   0.208989  -7.238 4.88e-13 ***
+round_dummy                 1.450705   0.207301   6.998 2.76e-12 ***
+age_hh                      0.080491   0.008191   9.827  < 2e-16 ***
+age_sp                     -0.019726   0.009279  -2.126 0.033533 *  
+educ_hh                     0.060032   0.029811   2.014 0.044063 *  
+educ_sp                    -0.076499   0.032416  -2.360 0.018299 *  
+female_hh                   1.103694   0.241104   4.578 4.76e-06 ***
+indigenous                 -2.312066   0.147543 -15.670  < 2e-16 ***
+hhsize                     -1.994700   0.033031 -60.388  < 2e-16 ***
+dirtfloor                  -2.299754   0.145472 -15.809  < 2e-16 ***
+bathroom                    0.499839   0.138913   3.598 0.000322 ***
+land                        0.090874   0.021580   4.211 2.56e-05 ***
+hospital_distance          -0.003190   0.001675  -1.905 0.056858 .  
+park                        0.002208   0.045377   0.049 0.961198    
+sports                      0.001727   0.022963   0.075 0.940039    
+enrolled_dummy:round_dummy -8.161552   0.268012 -30.452  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 6.544 on 9902 degrees of freedom
+Multiple R-squared:  0.5516,	Adjusted R-squared:  0.5509 
+F-statistic: 761.3 on 16 and 9902 DF,  p-value: < 2.2e-16
+
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> View(HISP_after)
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+In addition: Warning messages:
+1: In if (charToRaw(x) < 20) paste("\\u", toupper(format(as.hexmode(as.integer(charToRaw(x))),  :
+  the condition has length > 1 and only the first element will be used
+2: In if (charToRaw(x) < 20) paste("\\u", toupper(format(as.hexmode(as.integer(charToRaw(x))),  :
+  the condition has length > 1 and only the first element will be used
+3: In if (charToRaw(x) < 20) paste("\\u", toupper(format(as.hexmode(as.integer(charToRaw(x))),  :
+  the condition has length > 1 and only the first element will be used
+4: In if (charToRaw(x) < 20) paste("\\u", toupper(format(as.hexmode(as.integer(charToRaw(x))),  :
+  the condition has length > 1 and only the first element will be used
+5: In if (charToRaw(x) < 20) paste("\\u", toupper(format(as.hexmode(as.integer(charToRaw(x))),  :
+  the condition has length > 1 and only the first element will be used
+6: In if (charToRaw(x) < 20) paste("\\u", toupper(format(as.hexmode(as.integer(charToRaw(x))),  :
+  the condition has length > 1 and only the first element will be used
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> modeldif <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy*round_dummy, data = HISP_treatment)
+> stargazer(modeldif, type = "text")
+
+======================================================
+                               Dependent variable:    
+                           ---------------------------
+                               health_expenditures    
+------------------------------------------------------
+enrolled_dummy                      -6.302***         
+                                     (0.229)          
+                                                      
+round_dummy                         1.513***          
+                                     (0.251)          
+                                                      
+enrolled_dummy:round_dummy          -8.163***         
+                                     (0.324)          
+                                                      
+Constant                            20.791***         
+                                     (0.177)          
+                                                      
+------------------------------------------------------
+Observations                          9,919           
+R2                                    0.344           
+Adjusted R2                           0.343           
+Residual Std. Error             7.913 (df = 9915)     
+F Statistic                1,730.145*** (df = 3; 9915)
+======================================================
+Note:                      *p<0.1; **p<0.05; ***p<0.01
+> modeldif2 <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + land + hospital_distance + park + sports, data = HISP_treatment)
+> stargazer(modeldif2)
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: ven., févr. 18, 2022 - 21:02:52
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & health\_expenditures \\ 
+\hline \\[-1.8ex] 
+ enrolled\_dummy & $-$1.513$^{***}$ \\ 
+  & (0.209) \\ 
+  & \\ 
+ round\_dummy & 1.451$^{***}$ \\ 
+  & (0.207) \\ 
+  & \\ 
+ age\_hh & 0.080$^{***}$ \\ 
+  & (0.008) \\ 
+  & \\ 
+ age\_sp & $-$0.020$^{**}$ \\ 
+  & (0.009) \\ 
+  & \\ 
+ educ\_hh & 0.060$^{**}$ \\ 
+  & (0.030) \\ 
+  & \\ 
+ educ\_sp & $-$0.076$^{**}$ \\ 
+  & (0.032) \\ 
+  & \\ 
+ female\_hh & 1.104$^{***}$ \\ 
+  & (0.241) \\ 
+  & \\ 
+ indigenous & $-$2.312$^{***}$ \\ 
+  & (0.148) \\ 
+  & \\ 
+ hhsize & $-$1.995$^{***}$ \\ 
+  & (0.033) \\ 
+  & \\ 
+ dirtfloor & $-$2.300$^{***}$ \\ 
+  & (0.145) \\ 
+  & \\ 
+ bathroom & 0.500$^{***}$ \\ 
+  & (0.139) \\ 
+  & \\ 
+ land & 0.091$^{***}$ \\ 
+  & (0.022) \\ 
+  & \\ 
+ hospital\_distance & $-$0.003$^{*}$ \\ 
+  & (0.002) \\ 
+  & \\ 
+ park & 0.002 \\ 
+  & (0.045) \\ 
+  & \\ 
+ sports & 0.002 \\ 
+  & (0.023) \\ 
+  & \\ 
+ enrolled\_dummy:round\_dummy & $-$8.162$^{***}$ \\ 
+  & (0.268) \\ 
+  & \\ 
+ Constant & 27.379$^{***}$ \\ 
+  & (0.496) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 9,919 \\ 
+R$^{2}$ & 0.552 \\ 
+Adjusted R$^{2}$ & 0.551 \\ 
+Residual Std. Error & 6.544 (df = 9902) \\ 
+F Statistic & 761.315$^{***}$ (df = 16; 9902) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+> modeldif2 <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + land + hospital_distance + park + sports, data = HISP_treatment)
+> stargazer(modeldif2, type = "text")
+
+======================================================
+                               Dependent variable:    
+                           ---------------------------
+                               health_expenditures    
+------------------------------------------------------
+enrolled_dummy                      -1.513***         
+                                     (0.209)          
+                                                      
+round_dummy                         1.451***          
+                                     (0.207)          
+                                                      
+age_hh                              0.080***          
+                                     (0.008)          
+                                                      
+age_sp                              -0.020**          
+                                     (0.009)          
+                                                      
+educ_hh                              0.060**          
+                                     (0.030)          
+                                                      
+educ_sp                             -0.076**          
+                                     (0.032)          
+                                                      
+female_hh                           1.104***          
+                                     (0.241)          
+                                                      
+indigenous                          -2.312***         
+                                     (0.148)          
+                                                      
+hhsize                              -1.995***         
+                                     (0.033)          
+                                                      
+dirtfloor                           -2.300***         
+                                     (0.145)          
+                                                      
+bathroom                            0.500***          
+                                     (0.139)          
+                                                      
+land                                0.091***          
+                                     (0.022)          
+                                                      
+hospital_distance                    -0.003*          
+                                     (0.002)          
+                                                      
+park                                  0.002           
+                                     (0.045)          
+                                                      
+sports                                0.002           
+                                     (0.023)          
+                                                      
+enrolled_dummy:round_dummy          -8.162***         
+                                     (0.268)          
+                                                      
+Constant                            27.379***         
+                                     (0.496)          
+                                                      
+------------------------------------------------------
+Observations                          9,919           
+R2                                    0.552           
+Adjusted R2                           0.551           
+Residual Std. Error             6.544 (df = 9902)     
+F Statistic                761.315*** (df = 16; 9902) 
+======================================================
+Note:                      *p<0.1; **p<0.05; ***p<0.01
+> modeldif2 <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + land + hospital_distance + park + sports, data = HISP_treatment)
+> summary(modeldif2)
+
+Call:
+lm(formula = health_expenditures ~ enrolled_dummy + round_dummy + 
+    enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + 
+    educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + 
+    land + hospital_distance + park + sports, data = HISP_treatment)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.887  -1.851  -0.265   0.914  80.581 
+
+Coefficients:
+                            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                27.379043   0.496421  55.153  < 2e-16 ***
+enrolled_dummy             -1.512755   0.208989  -7.238 4.88e-13 ***
+round_dummy                 1.450705   0.207301   6.998 2.76e-12 ***
+age_hh                      0.080491   0.008191   9.827  < 2e-16 ***
+age_sp                     -0.019726   0.009279  -2.126 0.033533 *  
+educ_hh                     0.060032   0.029811   2.014 0.044063 *  
+educ_sp                    -0.076499   0.032416  -2.360 0.018299 *  
+female_hh                   1.103694   0.241104   4.578 4.76e-06 ***
+indigenous                 -2.312066   0.147543 -15.670  < 2e-16 ***
+hhsize                     -1.994700   0.033031 -60.388  < 2e-16 ***
+dirtfloor                  -2.299754   0.145472 -15.809  < 2e-16 ***
+bathroom                    0.499839   0.138913   3.598 0.000322 ***
+land                        0.090874   0.021580   4.211 2.56e-05 ***
+hospital_distance          -0.003190   0.001675  -1.905 0.056858 .  
+park                        0.002208   0.045377   0.049 0.961198    
+sports                      0.001727   0.022963   0.075 0.940039    
+enrolled_dummy:round_dummy -8.161552   0.268012 -30.452  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 6.544 on 9902 degrees of freedom
+Multiple R-squared:  0.5516,	Adjusted R-squared:  0.5509 
+F-statistic: 761.3 on 16 and 9902 DF,  p-value: < 2.2e-16
+
+> modeldif <- lm(health_expenditures ~ enrolled_dummy + round_dummy + round_dummy*enrolled_dummy, data = HISP_treatment)
+> stargazer(modeldif, type = "text")
+
+======================================================
+                               Dependent variable:    
+                           ---------------------------
+                               health_expenditures    
+------------------------------------------------------
+enrolled_dummy                      -6.302***         
+                                     (0.229)          
+                                                      
+round_dummy                         1.513***          
+                                     (0.251)          
+                                                      
+enrolled_dummy:round_dummy          -8.163***         
+                                     (0.324)          
+                                                      
+Constant                            20.791***         
+                                     (0.177)          
+                                                      
+------------------------------------------------------
+Observations                          9,919           
+R2                                    0.344           
+Adjusted R2                           0.343           
+Residual Std. Error             7.913 (df = 9915)     
+F Statistic                1,730.145*** (df = 3; 9915)
+======================================================
+Note:                      *p<0.1; **p<0.05; ***p<0.01
+> modeldif <- lm(health_expenditures ~ round_dummy + enrolled_dummy + round_dummy*enrolled_dummy, data = HISP_treatment)
+> stargazer(modeldif, type = "text")
+
+======================================================
+                               Dependent variable:    
+                           ---------------------------
+                               health_expenditures    
+------------------------------------------------------
+round_dummy                         1.513***          
+                                     (0.251)          
+                                                      
+enrolled_dummy                      -6.302***         
+                                     (0.229)          
+                                                      
+round_dummy:enrolled_dummy          -8.163***         
+                                     (0.324)          
+                                                      
+Constant                            20.791***         
+                                     (0.177)          
+                                                      
+------------------------------------------------------
+Observations                          9,919           
+R2                                    0.344           
+Adjusted R2                           0.343           
+Residual Std. Error             7.913 (df = 9915)     
+F Statistic                1,730.145*** (df = 3; 9915)
+======================================================
+Note:                      *p<0.1; **p<0.05; ***p<0.01
+> modeldif <- lm(health_expenditures ~ round+ enrolled + round_dummy*enrolled_dummy, data = HISP_treatment)
+> stargazer(modeldif, type = "text")
+
+======================================================
+                               Dependent variable:    
+                           ---------------------------
+                               health_expenditures    
+------------------------------------------------------
+roundBefore                         -1.513***         
+                                     (0.251)          
+                                                      
+enrolledNot enrolled                6.302***          
+                                     (0.229)          
+                                                      
+round_dummy                                           
+                                                      
+                                                      
+enrolled_dummy                                        
+                                                      
+                                                      
+round_dummy:enrolled_dummy          -8.163***         
+                                     (0.324)          
+                                                      
+Constant                            16.003***         
+                                     (0.290)          
+                                                      
+------------------------------------------------------
+Observations                          9,919           
+R2                                    0.344           
+Adjusted R2                           0.343           
+Residual Std. Error             7.913 (df = 9915)     
+F Statistic                1,730.145*** (df = 3; 9915)
+======================================================
+Note:                      *p<0.1; **p<0.05; ***p<0.01
+> modeldif <- lm(health_expenditures ~ round+ enrolled + round*enrolled, data = HISP_treatment)
+> stargazer(modeldif, type = "text")
+
+============================================================
+                                     Dependent variable:    
+                                 ---------------------------
+                                     health_expenditures    
+------------------------------------------------------------
+roundBefore                               6.650***          
+                                           (0.206)          
+                                                            
+enrolledNot enrolled                      14.465***         
+                                           (0.229)          
+                                                            
+roundBefore:enrolledNot enrolled          -8.163***         
+                                           (0.324)          
+                                                            
+Constant                                  7.840***          
+                                           (0.145)          
+                                                            
+------------------------------------------------------------
+Observations                                9,919           
+R2                                          0.344           
+Adjusted R2                                 0.343           
+Residual Std. Error                   7.913 (df = 9915)     
+F Statistic                      1,730.145*** (df = 3; 9915)
+============================================================
+Note:                            *p<0.1; **p<0.05; ***p<0.01
+> modeldif <- lm(health_expenditures ~ round+ enrolled + round*enrolled, data = HISP_treatment)
+> stargazer(modeldif, type = "text")
+
+============================================================
+                                     Dependent variable:    
+                                 ---------------------------
+                                     health_expenditures    
+------------------------------------------------------------
+roundBefore                               6.650***          
+                                           (0.206)          
+                                                            
+enrolledNot enrolled                      14.465***         
+                                           (0.229)          
+                                                            
+roundBefore:enrolledNot enrolled          -8.163***         
+                                           (0.324)          
+                                                            
+Constant                                  7.840***          
+                                           (0.145)          
+                                                            
+------------------------------------------------------------
+Observations                                9,919           
+R2                                          0.344           
+Adjusted R2                                 0.343           
+Residual Std. Error                   7.913 (df = 9915)     
+F Statistic                      1,730.145*** (df = 3; 9915)
+============================================================
+Note:                            *p<0.1; **p<0.05; ***p<0.01
+> View(HISP_treatment)
+> modeldif <- lm(health_expenditures ~ round_dummy + enrolled_dummy + round_dummy*enrolled_dummy, data = HISP_treatment)
+> stargazer(modeldif, type = "text")
+
+======================================================
+                               Dependent variable:    
+                           ---------------------------
+                               health_expenditures    
+------------------------------------------------------
+round_dummy                         1.513***          
+                                     (0.251)          
+                                                      
+enrolled_dummy                      -6.302***         
+                                     (0.229)          
+                                                      
+round_dummy:enrolled_dummy          -8.163***         
+                                     (0.324)          
+                                                      
+Constant                            20.791***         
+                                     (0.177)          
+                                                      
+------------------------------------------------------
+Observations                          9,919           
+R2                                    0.344           
+Adjusted R2                           0.343           
+Residual Std. Error             7.913 (df = 9915)     
+F Statistic                1,730.145*** (df = 3; 9915)
+======================================================
+Note:                      *p<0.1; **p<0.05; ***p<0.01
+> modeldif <- lm(health_expenditures ~ round_dummy + enrolled_dummy + round_dummy*enrolled_dummy, data = HISP_treatment)
+> stargazer(modeldif, type = "text")
+
+======================================================
+                               Dependent variable:    
+                           ---------------------------
+                               health_expenditures    
+------------------------------------------------------
+round_dummy                         1.513***          
+                                     (0.251)          
+                                                      
+enrolled_dummy                      -6.302***         
+                                     (0.229)          
+                                                      
+round_dummy:enrolled_dummy          -8.163***         
+                                     (0.324)          
+                                                      
+Constant                            20.791***         
+                                     (0.177)          
+                                                      
+------------------------------------------------------
+Observations                          9,919           
+R2                                    0.344           
+Adjusted R2                           0.343           
+Residual Std. Error             7.913 (df = 9915)     
+F Statistic                1,730.145*** (df = 3; 9915)
+======================================================
+Note:                      *p<0.1; **p<0.05; ***p<0.01
+> View(HISP_treatment)
+> modeldif2 <- lm(health_expenditures ~ enrolled_dummy + round_dummy + enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + land + hospital_distance + park + sports, data = HISP_treatment)
+> summary(modeldif2)
+
+Call:
+lm(formula = health_expenditures ~ enrolled_dummy + round_dummy + 
+    enrolled_dummy * round_dummy + age_hh + age_sp + educ_hh + 
+    educ_sp + female_hh + indigenous + hhsize + dirtfloor + bathroom + 
+    land + hospital_distance + park + sports, data = HISP_treatment)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.887  -1.851  -0.265   0.914  80.581 
+
+Coefficients:
+                            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                27.379043   0.496421  55.153  < 2e-16 ***
+enrolled_dummy             -1.512755   0.208989  -7.238 4.88e-13 ***
+round_dummy                 1.450705   0.207301   6.998 2.76e-12 ***
+age_hh                      0.080491   0.008191   9.827  < 2e-16 ***
+age_sp                     -0.019726   0.009279  -2.126 0.033533 *  
+educ_hh                     0.060032   0.029811   2.014 0.044063 *  
+educ_sp                    -0.076499   0.032416  -2.360 0.018299 *  
+female_hh                   1.103694   0.241104   4.578 4.76e-06 ***
+indigenous                 -2.312066   0.147543 -15.670  < 2e-16 ***
+hhsize                     -1.994700   0.033031 -60.388  < 2e-16 ***
+dirtfloor                  -2.299754   0.145472 -15.809  < 2e-16 ***
+bathroom                    0.499839   0.138913   3.598 0.000322 ***
+land                        0.090874   0.021580   4.211 2.56e-05 ***
+hospital_distance          -0.003190   0.001675  -1.905 0.056858 .  
+park                        0.002208   0.045377   0.049 0.961198    
+sports                      0.001727   0.022963   0.075 0.940039    
+enrolled_dummy:round_dummy -8.161552   0.268012 -30.452  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 6.544 on 9902 degrees of freedom
+Multiple R-squared:  0.5516,	Adjusted R-squared:  0.5509 
+F-statistic: 761.3 on 16 and 9902 DF,  p-value: < 2.2e-16
+
+> View(model1)
+> View(model1)
+> View(modeldif)
+> View(modeldif)
+> View(model1)
+> model1$coefficients[1]
+(Intercept) 
+   20.58689 
+> model1$coefficients[2]
+enrolled_rp 
+  -12.70845 
+> Method = c('OLS', 'OLS', 'IV', 'Diff-in-Diff', 'Diff-in-Diff')
+> Including_control_variables = c("No","Yes","Yes","No","Yes")
+> Estimate = c(model1$coefficients[2],model2$coefficients[2],"0",modeldif$coefficients[4],modeldif2$coefficients[4])
+> 
+> cbind.data.frame(Method,Including_control_variables,Estimate)
+> View(modeldif2)
+> Method = c('OLS', 'OLS', 'IV', 'Diff-in-Diff', 'Diff-in-Diff')
+> Including_control_variables = c("No","Yes","Yes","No","Yes")
+> Estimate = c(model1$coefficients[2],model2$coefficients[2],"0",modeldif$coefficients[4],modeldif2$coefficients[17])
+> 
+> cbind.data.frame(Method,Including_control_variables,Estimate)
+> Method = c('OLS', 'OLS', 'IV', 'Diff-in-Diff', 'Diff-in-Diff')
+> Including_control_variables = c("No","Yes","Yes","No","Yes")
+> Estimate = c(model1$coefficients[2],model2$coefficients[2],"0",modeldif$coefficients[4],modeldif2$coefficients[17])
+> 
+> cbind(Method,Including_control_variables,Estimate)
+                           Method         Including_control_variables Estimate           
+enrolled_rp                "OLS"          "No"                        "-12.7084490531256"
+enrolled_rp                "OLS"          "Yes"                       "-9.81526148604625"
+                           "IV"           "Yes"                       "0"                
+round_dummy:enrolled_dummy "Diff-in-Diff" "No"                        "-8.16293128733921"
+enrolled_dummy:round_dummy "Diff-in-Diff" "Yes"                       "-8.16155237473173"
+> Method = c('OLS', 'OLS', 'IV', 'Diff-in-Diff', 'Diff-in-Diff')
+> Including_control_variables = c("No","Yes","Yes","No","Yes")
+> Estimate = c(model1$coefficients[2],model2$coefficients[2],"0",modeldif$coefficients[4],modeldif2$coefficients[17])
+> 
+> cbind.table(Method,Including_control_variables,Estimate)
+Error in cbind.table(Method, Including_control_variables, Estimate) : 
+  could not find function "cbind.table"
+> Method = c('OLS', 'OLS', 'IV', 'Diff-in-Diff', 'Diff-in-Diff')
+> Including_control_variables = c("No","Yes","Yes","No","Yes")
+> Estimate = c(model1$coefficients[2],model2$coefficients[2],"0",modeldif$coefficients[4],modeldif2$coefficients[17])
+> 
+> cbind.data.frame(Method,Including_control_variables,Estimate)
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> Method = c('OLS', 'OLS', 'IV', 'Diff-in-Diff', 'Diff-in-Diff')
+> Including_control_variables = c("No","Yes","Yes","No","Yes")
+> Estimate = c(model1$coefficients[2],model2$coefficients[2],"0",modeldif$coefficients[4],modeldif2$coefficients[17])
+> 
+> cbind.data.frame(Method,Including_control_variables,Estimate)
+> source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd", encoding = 'UTF-8')
+Error in source("C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd",  : 
+  C:/Users/Olivier/Desktop/Cours_IREN/Econométrie/Final project/olivier.Rmd:6:1: unexpected '^'
+5: 
+6: **
+   ^
+> HISP_treatment$enrolled <- as.factor(HISP_treatment$enrolled)
+> HISP_treatment$round <- as.factor(HISP_treatment$round)
+> ggplot(HISP_treatment, mapping = aes(x = round, y = health_expenditure, color = enrolled)) +
++     geom_point(size = 2, alpha = 0.4) +
++     geom_vline(xintercept = "1993")
+Error in FUN(X[[i]], ...) : object 'health_expenditure' not found
+> HISP_treatment$enrolled <- as.factor(HISP_treatment$enrolled)
+> HISP_treatment$round <- as.factor(HISP_treatment$round)
+> ggplot(HISP_treatment, mapping = aes(x = round, y = health_expenditures, color = enrolled)) +
++     geom_point(size = 2, alpha = 0.4) +
++     geom_vline(xintercept = "1993")
+> install.packages("beanplot")
+Installation du package dans ‘C:/Users/Olivier/Documents/R/win-library/4.1’
+(car ‘lib’ n'est pas spécifié)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/beanplot_1.2.zip'
+Content type 'application/zip' length 419222 bytes (409 KB)
+downloaded 409 KB
+
+package ‘beanplot’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Olivier\AppData\Local\Temp\RtmpkpkEZe\downloaded_packages
+> cdplot(Species ~ Sepal.Width, data=iris)
+> datairis <- iris
+> cdplot(Species ~ Sepal.Width, data=iris)
+> View(datairis)
+> datairis <- iris
+> cdplot(enrolled ~ round, data=HISP_treatment)
+> datairis <- iris
+> cdplot(enrolled ~ health_expenditures, data=HISP_treatment)
+> datairis <- iris
+> cdplot(round ~ health_expenditures, data=HISP_treatment)
+> datairis <- iris
+> cdplot(round+enrolled ~ health_expenditures, data=HISP_treatment)
+Warning in Ops.factor(round, enrolled) :
+  ‘+’ n'est pas pertinent pour des variables facteurs
+Error in cdplot.formula(round + enrolled ~ health_expenditures, data = HISP_treatment) : 
+  dependent variable should be a factor
+> datairis <- iris
+> cdplot(enrolled ~ health_expenditures, data=HISP_treatment)
+> datairis <- iris
+> cdplot(health_expenditures ~ enrolled , data=HISP_treatment)
+Error in cdplot.formula(health_expenditures ~ enrolled, data = HISP_treatment) : 
+  dependent variable should be a factor
+> datairis <- iris
+> cdplot(enrolled ~ health_expenditures + , data=HISP_treatment)
+Error: unexpected ',' in "cdplot(enrolled ~ health_expenditures + ,"
+> datairis <- iris
+> cdplot(enrolled ~ health_expenditures , data=HISP_treatment)
+> datairis <- iris
+> cdplot(round ~ health_expenditures , data=HISP_treatment)
+> 
