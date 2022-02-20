@@ -1,108 +1,9 @@
 ---
-title: "Olivier Caron"
+title: "R Notebook"
 output: html_notebook
 ---
 
-**Final Project**
-
-#### **Maria Teresa Aguilar Rojas, Mustapha Sali, and Dianzhuo Zhu**
-
-\
-
-The final project consists two parts: econometrics (14 points) and data science (6 points). You are invited to follow the instructions of each part to solve the questions. Note that it is an individual project, and you are expected to submit three documents, all named [first name + last name + final project]
-
-The three documents are:
-
--   A solution sheet for econometrics, to [maria-teresa.aguilar-rojas\@dauphine.psl.eu](mailto:maria-teresa.aguilar-rojas@dauphine.psl.eu) and [dianzhuo.zhu\@dauphine.psl.eu](mailto:dianzhuo.zhu@dauphine.psl.eu)
-
--   An R code document for econometrics, to [maria-teresa.aguilar-rojas\@dauphine.psl.eu](mailto:maria-teresa.aguilar-rojas@dauphine.psl.eu) and [dianzhuo.zhu\@dauphine.psl.eu](mailto:dianzhuo.zhu@dauphine.psl.eu) (If you are using Markdown or Jupyter notebooks, the htlm document showing solutions+code is enough).
-
--   A Jupyter notebook with python code, comments and answers, to [mustapha.sali\@dauphine.psl.eu](mailto:mustapha.sali@dauphine.psl.eu)
-
-The deadline is **February 20, 2022**. We choose to give you enough time to finish the project. In consequence, delayed submissions will be heavily punished in final notes, although they will be graded. We use the same database for all the exercises (`HISP.csv`), but you may only need to use a subset of the entire database for some of the questions. We will explain you the variables and give you clear instructions on which subset to be used.
-
-\
-
-## **Description of the data**
-
-\
-
-The World Bank's *Impact Evaluation in Practice* used a hypothetical example of a health insurance program. This Health Insurance Subsidy Program (HISP) provides subsidies for buying private health insurance to poorer households, with the goal of lowering personal health expenditures, since people can rely on insurance coverage instead of paying out-of-pocket. Think of the HISP as a version of the Affordable Care Act (ACA, commonly known as Obamacare).
-
-\
-
-The dataset includes a number of important variables you'll use throughout this assignment:
-
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| Variable name         | Description                                                                                      |
-+:======================+:=================================================================================================+
-| `health_expenditures` | Out of pocket health expenditures (per person per year)                                          |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `eligible`            | Household eligible to enroll in HISP                                                             |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `enrolled`            | Household enrolled in HISP                                                                       |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `round`               | Indicator for before and after intervention                                                      |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `treatment_locality`  | Household is located in treatment community                                                      |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `poverty_index`       | 1-100 scale of poverty                                                                           |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `promotion_locality`  | Household is located in community that received random promotion/encouragement to enroll in HISP |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| `enrolled_rp`         | Household enrolled in HISP following random promotion                                            |
-+-----------------------+--------------------------------------------------------------------------------------------------+
-
-\
-
-It also includes several socio-demographic variables about the households. **Each of these are confounders between health expenditures and participation in the HISP**:
-
-+---------------------+-------------------------------------------------------------------------+
-| Variable name       | Description                                                             |
-+:====================+:========================================================================+
-| `age_hh`            | Age of the head of household (years)                                    |
-+---------------------+-------------------------------------------------------------------------+
-| `age_sp`            | Age of the spouse (years)                                               |
-+---------------------+-------------------------------------------------------------------------+
-| `educ_hh`           | Education of the head of household (years)                              |
-+---------------------+-------------------------------------------------------------------------+
-| `educ_sp`           | Education of the spouse (years)                                         |
-+---------------------+-------------------------------------------------------------------------+
-| `female_hh`         | Head of household is a woman (1 = yes)                                  |
-+---------------------+-------------------------------------------------------------------------+
-| `indigenous`        | Head of household speaks an indigenous language (1 = yes)               |
-+---------------------+-------------------------------------------------------------------------+
-| `hhsize`            | Number of household members                                             |
-+---------------------+-------------------------------------------------------------------------+
-| `dirtfloor`         | Home has a dirt floor (1 = yes)                                         |
-+---------------------+-------------------------------------------------------------------------+
-| `bathroom`          | Home has a private bathroom (1 = yes)                                   |
-+---------------------+-------------------------------------------------------------------------+
-| `land`              | Number of hectares of land owned by household                           |
-+---------------------+-------------------------------------------------------------------------+
-| `hospital_distance` | Distance to closest hospital (km)                                       |
-+---------------------+-------------------------------------------------------------------------+
-| `park`              | Distance to closest park (km)                                           |
-+---------------------+-------------------------------------------------------------------------+
-| `sports`            | Number of hours per week that the head of the household practices sport |
-+---------------------+-------------------------------------------------------------------------+
-
-\
-
-To help you understand these variables, think of the following story:
-
-Each household has a `poverty_index` number from 1 (the poorest) to 100 (the wealthiest) which indicates the level of poverty. In this example, all households with a `poverty_index` smaller than 58 are eligible for the HISP program. Among the eligible households, they can freely decide whether or not they want to enroll.
-
-To encourage more households to enroll, the program launches a promotion campaign in some randomly selected areas (note that the campaign is based on geography while the eligibility is based on index, which means that both eligible and non-eligible households may receive the promotion information). We document enrollment after receiving a random promotion (variable `enrolled_rp`)
-
-After the promotion campaign, the program is finally launched, but only in randomly selected localities (`treatment_locality == "Treatment"`), which means that not all eligible (and willing to participate) households are able to enroll in the program. We document enrollment to the program (variable `enrolled`), the health expenditures, and other socio-demographic variables of each household before and after the launch of the program. Note that `enrolled` and `enrolled_rp` are not the same variable; `enrolled` shows whether a person participates to the program, whereas `enrolled_rp` shows whether a person participates to the program after having received a promotion.
-
-\
-*Remark:* This is an artificial dataset that is designed for econometric analysis, so the descriptive stats may seem too "perfect" compared to real cases. Also, if you are confused about which subset of data to include in a regression, don't worry, we will give you indications on the variables to be used for each method. Since several variables are artificially designed, the purpose is not to have an in-depth understanding of the variables of the database, but to be able to use several methods and to explain the results.
-
-\
-
-## **Part 1: Econometrics**
+**Part 1: Econometrics**
 
 Maximum possible points: 14
 
@@ -133,7 +34,7 @@ You will use each of the four econometric approaches seen in class for estimatin
 
 \
 
-## **OLS Regression**
+**OLS Regression**
 
 \
 **Preliminary step A:** Create a dataset based on `HISP` that only includes observations from after the intervention (`round == "After"`). Note that you will use this database for all the **OLS and IV** exercises.
@@ -169,7 +70,7 @@ stargazer(model2, type = "text")
     Holding all over variables constant, the household' health_expenditures increases by `0.687` dollars.
 \
 
-## **Instrumental Variables Regression**
+**Instrumental Variables Regression**
 
 *Remark*: For the IV exercises, we will use the database created in **Preliminary Step A**, that only includes observations from after the intervention (`round == "After"`).
 
@@ -234,15 +135,12 @@ The difference-in-difference estimate is `-8.1629` (enrolled_dummy:round_dummyâ€
 HISP_treatment$enrolled <- as.factor(HISP_treatment$enrolled)
 HISP_treatment$round <- as.factor(HISP_treatment$round)
 ggplot(HISP_treatment, mapping = aes(x = round, y = health_expenditures, color = enrolled)) +
-    geom_point(size = 2, alpha = 0.4) +
-    geom_vline(xintercept = "1993")
+    geom_point(size = 2, alpha = 0.4)
 ```
 ```{r}
-datairis <- iris
 cdplot(enrolled ~ health_expenditures , data=HISP_treatment)
 ```
 ```{r}
-datairis <- iris
 cdplot(round ~ health_expenditures , data=HISP_treatment)
 ```
 **8.** Run a second model that estimates the difference-in-difference effect, but control for the following variables: `age_hh`, `age_sp`, `educ_hh`, `educ_sp`, `female_hh`, `indigenous`, `hhsize`,`dirtfloor`, `bathroom`, `land`,`hospital_distance`, `park`, `sports`. Report the regression results in a table. How does the causal effect change?
@@ -254,7 +152,7 @@ summary(modeldif2)
 By controlling for other variables, we see no notable change in `health_expenditures` - it is still about -`8.16x` - nor in the other variables.
 \
 
-### **Summary**
+**Summary**
 
 \
 **9.** Summarize the results from the three methods (OLS, IV and Diff-in-Diff) in the following table, and discuss the advantages and disadvantages of one method of your choice.
@@ -268,7 +166,7 @@ cbind.data.frame(Method,Including_control_variables,Estimate)
 The diff-in-diff method is useful because it enables to estimate the impact of the enrollment in the HISP program as if it was planned as an experiment (control and treatment groups), doing ex-post analysis on available data.
 \
 
-## **Regression Discontinuity Design**
+**Regression Discontinuity Design**
 
 Eligibility for the HISP is determined by income. Households that have an income of less than 58 on a standardized 1-100 scale (`poverty_index`) qualify for the program and are automatically enrolled. Because we have an arbitrary cutoff in a running variable, we can use regression discontinuity to measure the effect of the program on health expenditures.
 
@@ -288,73 +186,3 @@ We could start by choosing a wider bandwidth=10 for instance, decreasing the ban
 The plotting can be done by using bins.
 We should check if the bandwidth=5 is the bandwidth that minimizes the mean square error between actual and estimated treatment effects because the bias-variance tradeoff is captured in it the MSE of the estimator. (see https://www.mattblackwell.org/files/teaching/s11-rdd-handout.pdf, slide 52)
 \
-
-## **Part 2: Data Science**
-
-Maximum possible points: 6
-
-Deliverable: Jupyter notebook with Python code, comments, and answers to the asked questions
-
-Restitution: By e-mail to [mustapha.sali\@dauphine.psl.eu](mailto:mustapha.sali@dauphine.psl.eu)
-
-The aim of this part of the project is to train a regressor that predicts health expenditures per household using a part of the HISP database.
-
-For consistency reasons, you will only use data describing the situation of households before the implementation of the HISP program (`round=Before`).
-
-In addition, only the variables below will be used to train your model:
-
--   `poverty_index`\
-
--   `age_hh`
-
--   `age_sp`
-
--   `educ_hh`
-
--   `educ_sp`
-
--   `female_hh`
-
--   `indigenous`
-
--   `hhsize`
-
--   `dirtfloor`
-
--   `bathroom`
-
--   `land`
-
--   `hospital_distance`
-
--   `park`
-
--   `sports`
-
-\
-
-**1.** Upload the `HISP` dataset and build-up a Pandas Dataframe containing the label (health_expenditures) and the up-mentioned features. Show and comment some descriptive statistics related to this Dataframe.
-
-**2.** Split the Dataframe into a training and test sets with a test_size of 20%.
-
-**3.** A first linear model:
-
-1.  Using the training set, train a simple linear model. What are the required transformations on the variables before training the model?
-
-2.  Write a function that computes the Root Mean Squared Error (RMSE) and implement it on the predictions issued from the training set. What is the phenomena that could explain this result? What do you suggest as a solution to verify the generalizability of your model without using the test set?
-
-3.  Print the coefficients (and their related variables) as well as the intercept of your model.
-
-4.  Analyse the importance of the variables. Which variable(s) could be set aside without significant impact on the quality of the predictor? Which regularization makes it possible to set the coefficients of the less important variables to zero?
-
-**4.** A second model of your choice:
-
-1.  Using the training set, train a new regressor of your choice (Decision tree, Random forest, SVM, ...) considering a Grid Search approach on some hyperparameters (at least two of them). What are the required transformations on the variables before training the model? Briefly explain the role of the hyperparameters you selected for the Grid Search.
-
-2.  On a bar chart, plot the training and validation scores of the models resulting from the Grid Search. Briefly comment the chart.
-
-3.  Print the values of the hyperparameters related to the best model (based on the validation score)
-
-4.  Analyse the importance of the variables. Which variable could be set aside without significant impact on the quality of the predictor?
-
-**5.** Using the first 100 observations of the test set, plot the real values as well as the predicted values of both models. Compare the performance of both models using the whole test set. What is your conclusion?
